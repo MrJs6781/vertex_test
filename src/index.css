@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@theme {
+  --spacing-navbar: 50px;
+  --spacing-logo: 30px;
+}

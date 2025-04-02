@@ -1,6 +1,12 @@
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/navbar";
+
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline text-red-500">Hello world!</h1>
+    <section className="w-full h-screen flex flex-col items-start bg-black">
+      <Navbar />
+      <Outlet /> {/* Child routes render here */}
+    </section>
   );
 }
 
