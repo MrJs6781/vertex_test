@@ -8,16 +8,24 @@
   font-family: "manrope-semi-bold";
   src: url("./assets/fonts/Manrope-SemiBold.ttf");
 }
+@font-face {
+  font-family: "manrope-extra-bold";
+  src: url("./assets/fonts/Manrope-ExtraBold.ttf");
+}
 
 @theme {
   --spacing-logo: 30px;
   --spacing-13: 50px;
   --spacing-47: 190px;
   --spacing-31: 120px;
+  --spacing-70: 273px;
   --font-manrope-bold: "manrope-bold", sans-serif;
   --font-manrope-semi-bold: "manrope-semi-bold", sans-serif;
+  --font-manrope-extra-bold: "manrope-extra-bold", sans-serif;
   --tracking-title: -4%;
   --color-primary-gray: #1d1d1d;
+  --color-primary-black: #080808;
   --color-secondary-gray: #555555;
   --color-primary-green: #01754f;
+  --text-primary-large: 28px;
 }

@@ -10,7 +10,7 @@ function App() {
       <div className="w-full h-full min-h-screen flex items-start">
         <SidebarUsers />
         <SidebarPages />
-        <div className="w-fit h-full flex flex-col items-start justify-start">
+        <div className="grow h-full flex flex-col items-start justify-start">
           <Outlet />
         </div>
       </div>
