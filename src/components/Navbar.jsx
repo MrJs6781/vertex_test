@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <section className="w-full h-13 flex items-center justify-between px-2 border-b border-primary-gray">
+    <section className="w-full h-13 flex items-center justify-between border-b border-primary-gray">
       <div className="w-full max-w-60 h-full flex items-center justify-between border-r border-primary-gray">
         <div className="w-13 h-full flex items-center justify-center">
           <Link
-            hrefLang="'/"
+            to="/"
             className="w-logo aspect-square rounded-full bg-white flex items-center justify-center cursor-pointer"
           >
             <img
@@ -17,7 +17,7 @@ export default function Navbar() {
             />
           </Link>
         </div>
-        <div className="w-47 h-full flex items-center justify-center">
+        <div className="w-47 h-full flex items-center justify-start ps-6">
           <h1 className="text-white font-manrope-bold font-bold textlg tracking-title">
             Vertxlabs, Inc
           </h1>

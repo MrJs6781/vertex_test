@@ -28,9 +28,9 @@ const UsersList = ({ user }) => {
 export default function SidebarUsers() {
   return (
     <div className="w-13 h-full border-r border-primary-gray flex flex-col items-center justify-between">
-      <ul className="w-full h-full min-h-[86vh] flex flex-col items-center justify-start">
+      <ul className="w-full h-full flex flex-col items-center justify-start">
         {onlineUsers?.map((user) => (
-          <UsersList user={user} />
+          <UsersList user={user} key={user.id} />
         ))}
       </ul>
       <button className="w-full h-13 flex items-center justify-center cursor-pointer border border-primary-gray">
