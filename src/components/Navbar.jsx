@@ -3,14 +3,18 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <section className="w-full h-navbar flex items-center justify-between px-2 border-b border-navbar-gray">
-      <div className="w-full max-w-60 h-full flex items-center justify-between border-r border-navbar-gray">
-        <div className="w-navbar h-full flex items-center justify-center">
+    <section className="w-full h-13 flex items-center justify-between px-2 border-b border-primary-gray">
+      <div className="w-full max-w-60 h-full flex items-center justify-between border-r border-primary-gray">
+        <div className="w-13 h-full flex items-center justify-center">
           <Link
             hrefLang="'/"
             className="w-logo aspect-square rounded-full bg-white flex items-center justify-center cursor-pointer"
           >
-            Logo
+            <img
+              src="/assets/img/vertex-logo.png"
+              alt="Logo"
+              className="w-4 h-4 object-cover"
+            />
           </Link>
         </div>
         <div className="w-47 h-full flex items-center justify-center">
@@ -25,7 +29,7 @@ export default function Navbar() {
             Analytics
           </p>
         </span>
-        <span className="w-31 h-full flex items-center justify-center border border-navbar-gray border-t-0">
+        <span className="w-31 h-full flex items-center justify-center border border-primary-gray border-t-0">
           <p className="font-manrope-semi-bold font-semibold text-white cursor-pointer">
             Activity
           </p>

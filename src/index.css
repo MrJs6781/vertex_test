@@ -10,12 +10,13 @@
 }
 
 @theme {
-  --spacing-navbar: 50px;
   --spacing-logo: 30px;
+  --spacing-13: 50px;
   --spacing-47: 190px;
   --spacing-31: 120px;
   --font-manrope-bold: "manrope-bold", sans-serif;
   --font-manrope-semi-bold: "manrope-semi-bold", sans-serif;
   --tracking-title: -4%;
-  --color-navbar-gray: #1d1d1d;
+  --color-primary-gray: #1d1d1d;
+  --color-primary-green: #01754f;
 }
