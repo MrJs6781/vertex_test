@@ -1,8 +1,14 @@
 import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AnalyticsTab = [
   { id: 1, name: "Overview" },
   { id: 2, name: "Demographics" },
+];
+const InsightBoxes = [
+  { id: 1, title: "Founders", Score: "7.4K", Rate: "+000%", number: "(000)" },
+  { id: 2, title: "Investors", Score: "6.09K", Rate: "+000%", number: "(000)" },
 ];
 
 const TabList = ({ tab, activeTab, setActiveTab }) => {
@@ -24,6 +30,29 @@ const TabList = ({ tab, activeTab, setActiveTab }) => {
   );
 };
 
+const InsightTabs = ({ box }) => {
+  return (
+    <li className="flex flex-col items-start">
+      <h4 className="text-white font-manrope-bold tracking-title">
+        {box.title}
+      </h4>
+      <span className="w-full flex items-start justify-start gap-5">
+        <p className="text-white font-manrope-extra-bold font-extrabold tracking-title text-primary-extra-large">
+          {box.Score}
+        </p>
+        <span className="flex flex-col items-start gap-1">
+          <p className="text-primary-green text-xs font-manrope-semi-bold">
+            {box.Rate}
+          </p>
+          <p className="text-secondary-gray text-xs font-manrope-semi-bold ps-1">
+            {box.number}
+          </p>
+        </span>
+      </span>
+    </li>
+  );
+};
+
 const ShowOverviewTab = () => {
   return (
     <div className="w-full h-auto flex flex-col items-start justify-start px-13 pt-8 bg-primary-black">
@@ -32,7 +61,26 @@ const ShowOverviewTab = () => {
       </h2>
       <div className="w-full h-auto min-h-70 flex items-start justify-start gap-4 mt-6">
         <div className="bg-black border border-primary-gray rounded-lg grow h-70"></div>
-        <div className="bg-black border border-primary-gray rounded-lg w-70 aspect-square"></div>
+        <div className="bg-black border border-primary-gray rounded-lg w-70 aspect-square p-4 tracking-title flex flex-col items-start">
+          <h3 className="text-white font-manrope-bold text-primary-medium">
+            Insights
+          </h3>
+          <ul className="w-full flex flex-col items-start gap-3 mt-3">
+            {InsightBoxes?.map((box) => (
+              <InsightTabs box={box} key={box.id} />
+            ))}
+          </ul>
+          <small className="w-full h-0.5 bg-primary-gray mt-2"></small>
+          <Link
+            to="/"
+            className="w-full flex items-center justify-end pt-4 gap-3"
+          >
+            <p className="text-white font-manrope-medium text-xss">
+              View detailed insights
+            </p>
+            <ArrowRight className="text-white w-4 h-4" />
+          </Link>
+        </div>
       </div>
       <div className="bg-black border border-primary-gray rounded-lg w-full h-70 mt-6"></div>
     </div>

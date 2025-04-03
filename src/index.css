@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 @font-face {
+  font-family: "manrope-extra-bold";
+  src: url("./assets/fonts/Manrope-ExtraBold.ttf");
+}
+@font-face {
   font-family: "manrope-bold";
   src: url("./assets/fonts/Manrope-Bold.ttf");
 }
@@ -9,8 +13,8 @@
   src: url("./assets/fonts/Manrope-SemiBold.ttf");
 }
 @font-face {
-  font-family: "manrope-extra-bold";
-  src: url("./assets/fonts/Manrope-ExtraBold.ttf");
+  font-family: "manrope-medium";
+  src: url("./assets/fonts/Manrope-Medium.ttf");
 }
 
 @theme {
@@ -22,10 +26,15 @@
   --font-manrope-bold: "manrope-bold", sans-serif;
   --font-manrope-semi-bold: "manrope-semi-bold", sans-serif;
   --font-manrope-extra-bold: "manrope-extra-bold", sans-serif;
+  --font-manrope-medium: "manrope-medium", sans-serif;
   --tracking-title: -4%;
   --color-primary-gray: #1d1d1d;
   --color-primary-black: #080808;
+  --color-primary-green: #01754f;
   --color-secondary-gray: #555555;
   --color-primary-green: #01754f;
+  --text-primary-extra-large: 32px;
   --text-primary-large: 28px;
+  --text-primary-medium: 20px;
+  --text-xss: 10px;
 }
