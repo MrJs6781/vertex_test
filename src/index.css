@@ -1,6 +1,21 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "manrope-bold";
+  src: url("./assets/fonts/Manrope-Bold.ttf");
+}
+@font-face {
+  font-family: "manrope-semi-bold";
+  src: url("./assets/fonts/Manrope-SemiBold.ttf");
+}
+
 @theme {
   --spacing-navbar: 50px;
   --spacing-logo: 30px;
+  --spacing-47: 190px;
+  --spacing-31: 120px;
+  --font-manrope-bold: "manrope-bold", sans-serif;
+  --font-manrope-semi-bold: "manrope-semi-bold", sans-serif;
+  --tracking-title: -4%;
+  --color-navbar-gray: #1d1d1d;
 }
