@@ -22,6 +22,7 @@
   --spacing-13: 50px;
   --spacing-47: 190px;
   --spacing-31: 120px;
+  --spacing-68: 258px;
   --spacing-70: 273px;
   --font-manrope-bold: "manrope-bold", sans-serif;
   --font-manrope-semi-bold: "manrope-semi-bold", sans-serif;
@@ -32,9 +33,9 @@
   --color-primary-black: #080808;
   --color-primary-green: #01754f;
   --color-secondary-gray: #555555;
-  --color-primary-green: #01754f;
   --text-primary-extra-large: 32px;
   --text-primary-large: 28px;
   --text-primary-medium: 20px;
   --text-xss: 10px;
+  --radius-primary-20: 20px;
 }

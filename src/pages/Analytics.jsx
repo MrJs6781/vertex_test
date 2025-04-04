@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import WorldMapComponent from "../components/WorldMapComponent";
 
 const AnalyticsTab = [
   { id: 1, name: "Overview" },
@@ -82,7 +83,9 @@ const ShowOverviewTab = () => {
           </Link>
         </div>
       </div>
-      <div className="bg-black border border-primary-gray rounded-lg w-full h-70 mt-6"></div>
+      <div className="bg-black border border-primary-gray rounded-lg w-full h-70 mt-6">
+        <WorldMapComponent />
+      </div>
     </div>
   );
 };
