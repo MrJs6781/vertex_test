@@ -7,6 +7,41 @@ const AnalyticsTab = [
   { id: 4, name: "Media" },
 ];
 
+const FoundedCompaniesList = [
+  {
+    id: 1,
+    image: "/assets/img/vertex-logo.svg",
+    title: "Vertx",
+    proto: "CEO",
+    desc: "Founded in 2025. in Fintech.",
+  },
+  {
+    id: 2,
+    image: "/assets/img/vertex-logo.svg",
+    title: "Company 1",
+    proto: "PROPRIETOR",
+    desc: "Details/Information like acquired /exit/m&a",
+  },
+];
+
+const ExperienceList = [
+  {
+    id: 1,
+    image: "/assets/img/vertex-logo.svg",
+    title: "Company 1",
+  },
+  {
+    id: 2,
+    image: "/assets/img/vertex-logo.svg",
+    title: "Company 2",
+  },
+  {
+    id: 3,
+    image: "/assets/img/vertex-logo.svg",
+    title: "Company 3",
+  },
+];
+
 const TabList = ({ tab, activeTab, setActiveTab }) => {
   const changeActiveTab = () => {
     setActiveTab(tab.name);
@@ -77,8 +112,88 @@ const ShowOverviewTab = () => {
         </div>
       </div>
       <div className="w-full h-auto min-h-70 grid grid-cols-2 gap-4 mt-6">
-        <div className="bg-black border border-third-gray rounded-lg w-full min-h-90"></div>
-        <div className="bg-black border border-third-gray rounded-lg w-full min-h-90"></div>
+        <div className="bg-black border border-third-gray rounded-lg w-full min-h-90 p-6">
+          <h3 className="text-white font-manrope-bold font-extrabold text-lg">
+            Founded Companies
+          </h3>
+          <p className="text-white font-manrope-bold text-secondary-extra-large mt-3">
+            02
+          </p>
+          <ul className="w-full flex flex-col items-start gap-4">
+            {FoundedCompaniesList?.map((item, _index) => (
+              <li
+                key={item.id}
+                className="w-full flex items-start justify-between"
+              >
+                <span className="w-fit flex items-start gap-3">
+                  <img
+                    src="/assets/img/vertex-logo.svg"
+                    alt=""
+                    className="object-cover w-10 h-10 rounded-xs"
+                  />
+                  <span className="w-full flex flex-col items-start gap-1">
+                    <span className="w-full flex items-center justify-start gap-2">
+                      <h3 className="text-white font-manrope-bold text-sm">
+                        {item?.title}
+                      </h3>
+                      <span
+                        className={
+                          _index != 1
+                            ? "bg-secondary-green rounded-xs min-h-3 min-w-6 flex items-center justify-center"
+                            : "bg-primary-silver rounded-xs min-h-3 min-w-6 flex items-center justify-center px-1"
+                        }
+                      >
+                        <p className="text-third-green text-xss font-jetBrainsMono-medium tracking-title">
+                          {item?.proto}
+                        </p>
+                      </span>
+                    </span>
+                    <p className="w-full max-w-36 font-manrope-medium text-white text-xs">
+                      {item?.desc}
+                    </p>
+                  </span>
+                </span>
+                <button className="text-white font-manrope-medium text-xs cursor-pointer">
+                  View Profile
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="bg-black border border-third-gray rounded-lg w-full min-h-90 p-6">
+          <h3 className="text-white font-manrope-bold font-extrabold text-lg">
+            Experience
+          </h3>
+          <p className="text-white font-manrope-bold text-secondary-extra-large mt-1">
+            03
+          </p>
+          <ul className="w-full flex flex-col items-start gap-4">
+            {ExperienceList?.map((item, _index) => (
+              <li
+                key={item.id}
+                className="w-full flex items-start justify-between"
+              >
+                <span className="w-fit flex items-center gap-3">
+                  <img
+                    src="/assets/img/vertex-logo.svg"
+                    alt=""
+                    className="object-cover w-10 h-10 rounded-xs"
+                  />
+                  <span className="w-full flex flex-col items-start gap-1">
+                    <span className="w-full flex items-center justify-start gap-2">
+                      <h3 className="text-white font-manrope-bold text-sm">
+                        {item?.title}
+                      </h3>
+                    </span>
+                  </span>
+                </span>
+                <button className="text-white font-manrope-medium text-xs cursor-pointer">
+                  View Profile
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

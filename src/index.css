@@ -37,11 +37,15 @@
   --font-jetBrainsMono-medium: "jetBrainsMono-medium", sans-serif;
   --tracking-title: -4%;
   --color-primary-gray: #1d1d1d;
+  --color-primary-silver: #b1bdeb;
   --color-primary-black: #080808;
   --color-primary-green: #01754f;
+  --color-secondary-green: #579560;
+  --color-third-green: #04470b;
   --color-secondary-gray: #555555;
   --color-third-gray: #272727;
   --text-primary-extra-large: 32px;
+  --text-secondary-extra-large: 64px;
   --text-primary-large: 28px;
   --text-primary-medium: 20px;
   --text-xss: 10px;
