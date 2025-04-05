@@ -58,13 +58,13 @@ export default function WorldMapComponent() {
   }
 
   return (
-    <div className="dark:bg-black bg-white w-full h-full max-h-70 flex flex-col relative">
-      <div className="flex-1 flex">
-        <div className="grow max-h-48 flex items-center justify-center">
+    <div className="dark:bg-black bg-white w-full h-full lg:max-h-70 flex flex-col relative">
+      <div className="flex-1 flex flex-col lg:flex-row">
+        <div className="grow lg:max-h-48 flex items-center justify-center">
           <DotMap />
         </div>
 
-        <div className="w-68 flex flex-col items-start justify-center pe-4">
+        <div className="w-full lg:w-68 flex flex-col items-start justify-center pe-4">
           <ul className="w-full flex flex-col items-start gap-3 mt-3">
             {COUNTRIES.map((country, index) => (
               <li key={index} className="w-full flex items-end gap-2">
@@ -132,7 +132,7 @@ export default function WorldMapComponent() {
         </div>
       </div>
 
-      <div className="flex justify-start items-center gap-6 absolute left-4 bottom-4 border border-primary-gray p-2 rounded-primary-20">
+      <div className="hidden lg:flex justify-start items-center gap-6 absolute left-4 bottom-4 border border-primary-gray p-2 rounded-primary-20">
         {COUNTRIES.map((country, index) => (
           <div key={index} className="flex items-start gap-1">
             <div

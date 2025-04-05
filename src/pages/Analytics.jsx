@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import WorldMapComponent from "../components/WorldMapComponent";
 import RechartsLineChart from "../components/LineChartRecharts";
+import Footer from "../components/Footer";
 
 const AnalyticsTab = [
   { id: 1, name: "Overview" },
@@ -57,16 +58,23 @@ const InsightTabs = ({ box }) => {
 
 const ShowOverviewTab = () => {
   return (
-    <div className="w-full h-auto flex flex-col items-start justify-start px-13 pt-8 bg-primary-black">
-      <h2 className="text-white font-manrope-bold font-extrabold text-primary-large tracking-title">
+    <div className="w-full h-auto flex flex-col items-start justify-start px-4 lg:px-13 pt-6 lg:pt-8 pb-24 lg:pb-8 bg-primary-black">
+      <h2 className="text-white font-manrope-bold font-extrabold text-xl lg:text-primary-large tracking-title mb-4">
         Overview
       </h2>
-      <div className="w-full h-auto min-h-70 flex items-start justify-start gap-4 mt-6">
-        <div className="bg-black border border-primary-gray rounded-lg grow h-70">
-          <RechartsLineChart />
+
+      {/* Responsive Layout for Charts and Insights */}
+      <div className="w-full h-auto flex flex-col lg:flex-row items-start justify-start gap-4 mb-4 lg:mb-6">
+        {/* Line Chart */}
+        <div className="bg-black border border-primary-gray rounded-lg w-full lg:grow h-auto lg:h-70">
+          <div className="h-60 lg:h-full">
+            <RechartsLineChart />
+          </div>
         </div>
-        <div className="bg-black border border-primary-gray rounded-lg w-70 aspect-square p-4 tracking-title flex flex-col items-start">
-          <h3 className="text-white font-manrope-bold text-primary-medium">
+
+        {/* Insights Box */}
+        <div className="bg-black border border-primary-gray rounded-lg w-full lg:w-70 p-4 tracking-title flex flex-col items-start">
+          <h3 className="text-white font-manrope-bold text-lg lg:text-primary-medium">
             Insights
           </h3>
           <ul className="w-full flex flex-col items-start gap-3 mt-3">
@@ -86,7 +94,9 @@ const ShowOverviewTab = () => {
           </Link>
         </div>
       </div>
-      <div className="bg-black border border-primary-gray rounded-lg w-full h-70 mt-6">
+
+      {/* World Map Component */}
+      <div className="bg-black border border-primary-gray rounded-lg w-full lg:h-70">
         <WorldMapComponent />
       </div>
     </div>
@@ -98,7 +108,7 @@ function Analytics() {
 
   return (
     <div className="w-full h-auto flex flex-col items-start">
-      <div className="w-full h-13 flex items-center justify-between">
+      <div className="w-full h-13 flex items-center justify-between overflow-x-auto">
         <ul className="flex justify-start items-center w-full grow h-full border border-t-0 border-primary-gray">
           {AnalyticsTab.map((tab) => (
             <TabList
@@ -109,11 +119,14 @@ function Analytics() {
             />
           ))}
         </ul>
-        <button className="text-white font-manrope-semi-bold font-semibold w-31 h-full flex items-center justify-center cursor-pointer border-l border-b border-primary-gray">
+        <button className="whitespace-nowrap text-white font-manrope-semi-bold font-semibold w-31 h-full flex items-center justify-center cursor-pointer border-l border-b border-primary-gray">
           More
         </button>
       </div>
       {activeTab == "Overview" && <ShowOverviewTab />}
+
+      {/* Footer Component */}
+      <Footer />
     </div>
   );
 }
