@@ -20,6 +20,7 @@
 @theme {
   --spacing-logo: 30px;
   --spacing-13: 50px;
+  --spacing-27: 108px;
   --spacing-47: 190px;
   --spacing-31: 120px;
   --spacing-68: 258px;
@@ -39,4 +40,124 @@
   --text-primary-medium: 20px;
   --text-xss: 10px;
   --radius-primary-20: 20px;
+}
+
+.chart-component {
+  position: relative;
+  font-family: "Manrope", sans-serif;
+}
+
+.chart-controls {
+  margin-bottom: 8px;
+  padding-bottom: 16px;
+}
+
+.custom-select {
+  position: relative;
+  min-width: 130px;
+  user-select: none;
+  margin-right: 8px;
+}
+
+.chart-total {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.select-selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 28px;
+  padding: 0 10px;
+  background-color: transparent;
+  border: 1px solid var(--primary-gray, #374151);
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  transition: all 0.2s;
+}
+
+.custom-select.open .select-selected {
+  border-radius: 10px 10px 0 0;
+  border-bottom-color: transparent;
+}
+
+.select-arrow {
+  margin-left: 8px;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.custom-select.open .select-arrow {
+  transform: rotate(180deg);
+}
+
+.select-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #1f2937;
+  border: 1px solid var(--primary-gray, #374151);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.select-item {
+  padding: 8px 12px;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.select-item:hover {
+  background-color: #374151;
+}
+
+.select-item.selected {
+  background-color: #2563eb;
+}
+
+.add-select .select-selected {
+  color: #a3a3a3;
+}
+
+.custom-tooltip {
+  background-color: white;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  min-width: 150px;
+  max-width: 220px;
+}
+
+@media (max-width: 768px) {
+  .custom-select {
+    min-width: 90px;
+  }
+
+  .select-selected {
+    height: 24px;
+    font-size: 11px;
+    padding: 0 8px;
+  }
+
+  .chart-container {
+    max-height: 180px !important;
+  }
 }

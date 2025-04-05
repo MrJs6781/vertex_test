@@ -2,6 +2,8 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import WorldMapComponent from "../components/WorldMapComponent";
+import LineChart from "../components/LineChart";
+import RechartsLineChart from "../components/LineChartRecharts";
 
 const AnalyticsTab = [
   { id: 1, name: "Overview" },
@@ -61,7 +63,9 @@ const ShowOverviewTab = () => {
         Overview
       </h2>
       <div className="w-full h-auto min-h-70 flex items-start justify-start gap-4 mt-6">
-        <div className="bg-black border border-primary-gray rounded-lg grow h-70"></div>
+        <div className="bg-black border border-primary-gray rounded-lg grow h-70">
+          <RechartsLineChart />
+        </div>
         <div className="bg-black border border-primary-gray rounded-lg w-70 aspect-square p-4 tracking-title flex flex-col items-start">
           <h3 className="text-white font-manrope-bold text-primary-medium">
             Insights
