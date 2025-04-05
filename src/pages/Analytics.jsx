@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import WorldMapComponent from "../components/WorldMapComponent";
-import LineChart from "../components/LineChart";
 import RechartsLineChart from "../components/LineChartRecharts";
 
 const AnalyticsTab = [
