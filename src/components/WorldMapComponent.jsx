@@ -1,6 +1,7 @@
 "use client";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import DotMap from "./DotMap";
 
 const COUNTRIES = [
   {
@@ -59,7 +60,9 @@ export default function WorldMapComponent() {
   return (
     <div className="dark:bg-black bg-white w-full h-full max-h-70 flex flex-col relative">
       <div className="flex-1 flex">
-        <div className="grow max-h-48"></div>
+        <div className="grow max-h-48 flex items-center justify-center">
+          <DotMap />
+        </div>
 
         <div className="w-68 flex flex-col items-start justify-center pe-4">
           <ul className="w-full flex flex-col items-start gap-3 mt-3">
