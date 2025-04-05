@@ -14,7 +14,7 @@ export default function SidebarPages() {
   const location = useLocation();
 
   return (
-    <div className="w-47 h-full flex items-start justify-start border-primary-gray">
+    <div className="w-47 h-full min-h-screen flex items-start justify-start border-r border-primary-gray">
       <ul className="w-fit min-w-20 flex flex-col items-start justify-start gap-logo ps-6 pt-5">
         {pageLists?.map((page) => (
           <Link
