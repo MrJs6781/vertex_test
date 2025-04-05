@@ -1,9 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, User, X } from "lucide-react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Function to get current page name from pathname
+  const getPageName = () => {
+    const path = location.pathname;
+    if (path === "/") return "Dashboard";
+    return path.charAt(1).toUpperCase() + path.slice(2);
+  };
 
   return (
     <section className="w-full h-13 flex items-center justify-between border-b border-primary-gray relative">
@@ -30,7 +38,7 @@ export default function Navbar() {
       <div className="hidden lg:flex w-full h-full items-center justify-between px-4">
         <span className="w-full h-full flex items-center justify-start">
           <p className="font-manrope-semi-bold font-semibold text-white">
-            Analytics
+            {getPageName()}
           </p>
         </span>
         <span className="w-31 h-full flex items-center justify-center border border-primary-gray border-t-0">

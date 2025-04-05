@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Footer from "../components/Footer";
 
 const AnalyticsTab = [
   { id: 1, name: "Overview" },
@@ -63,14 +64,15 @@ const TabList = ({ tab, activeTab, setActiveTab }) => {
 
 const ShowOverviewTab = () => {
   return (
-    <div className="w-full h-auto flex flex-col items-start justify-start px-13 pt-8 bg-primary-black">
-      <h2 className="text-white font-manrope-bold font-extrabold text-primary-large tracking-title">
+    <div className="w-full h-auto flex flex-col items-start justify-start px-4 lg:px-13 pt-6 lg:pt-8 pb-24 lg:pb-8 bg-primary-black">
+      <h2 className="text-white font-manrope-bold font-extrabold text-xl lg:text-primary-large tracking-title mb-4">
         Overview
       </h2>
-      <div className="bg-black border border-third-gray rounded-lg w-full h-48 mt-6 flex items-center justify-start px-12 gap-12">
+
+      {/* Profile Card - Responsive */}
+      <div className="bg-black border border-third-gray rounded-lg w-full h-auto lg:h-48 mt-2 lg:mt-6 flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start p-6 lg:px-12 gap-6 lg:gap-12">
         <svg
-          width="120"
-          height="120"
+          className="w-24 h-24 lg:w-30 lg:h-30"
           viewBox="0 0 120 120"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -84,14 +86,14 @@ const ShowOverviewTab = () => {
             fill="white"
           />
         </svg>
-        <div className="w-full flex flex-col items-start gap-2 justify-start max-w-52">
-          <span className="w-full flex items-center justify-between">
+        <div className="w-full flex flex-col items-center lg:items-start gap-2 justify-start lg:max-w-52">
+          <span className="w-full flex items-center justify-center lg:justify-between">
             <h2 className="text-white font-manrope-bold font-bold text-2xl">
               Mr A
             </h2>
             <img src="/assets/img/Twitter_Verified_Badge.svg" alt="" />
           </span>
-          <span className="w-full flex items-center justify-start gap-2 max-w-52">
+          <span className="w-full flex items-center justify-center lg:justify-start gap-2 lg:max-w-52">
             <p className="text-white font-manrope-medium text-xs">
               Co-Founder & CEO @Vertx
             </p>
@@ -104,14 +106,17 @@ const ShowOverviewTab = () => {
           <button className="bg-white rounded-xs font-jetBrainsMono-medium text-xss min-h-3 min-w-20 mt-1">
             Entrepreneur
           </button>
-          <span className="w-full max-w-52 flex items-center justify-start gap-2 mt-4">
+          <span className="w-full max-w-52 flex items-center justify-center lg:justify-start gap-2 mt-4">
             <img src="/assets/img/linkedin.svg" alt="" />
             <img src="/assets/img/x-logo.svg" alt="" />
             <img src="/assets/img/gmail.svg" alt="" />
           </span>
         </div>
       </div>
-      <div className="w-full h-auto min-h-70 grid grid-cols-2 gap-4 mt-6">
+
+      {/* Grid Layout - Responsive */}
+      <div className="w-full h-auto min-h-70 grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
+        {/* Founded Companies */}
         <div className="bg-black border border-third-gray rounded-lg w-full min-h-90 p-6">
           <h3 className="text-white font-manrope-bold font-extrabold text-lg">
             Founded Companies
@@ -123,9 +128,9 @@ const ShowOverviewTab = () => {
             {FoundedCompaniesList?.map((item, _index) => (
               <li
                 key={item.id}
-                className="w-full flex items-start justify-between"
+                className="w-full flex flex-col sm:flex-row items-start justify-between"
               >
-                <span className="w-fit flex items-start gap-3">
+                <span className="w-full sm:w-fit flex items-start gap-3">
                   <img
                     src="/assets/img/vertex-logo.svg"
                     alt=""
@@ -148,18 +153,20 @@ const ShowOverviewTab = () => {
                         </p>
                       </span>
                     </span>
-                    <p className="w-full max-w-36 font-manrope-medium text-white text-xs">
+                    <p className="w-full max-w-full sm:max-w-36 font-manrope-medium text-white text-xs">
                       {item?.desc}
                     </p>
                   </span>
                 </span>
-                <button className="text-white font-manrope-medium text-xs cursor-pointer">
+                <button className="text-white font-manrope-medium text-xs cursor-pointer mt-2 sm:mt-0">
                   View Profile
                 </button>
               </li>
             ))}
           </ul>
         </div>
+
+        {/* Experience */}
         <div className="bg-black border border-third-gray rounded-lg w-full min-h-90 p-6">
           <h3 className="text-white font-manrope-bold font-extrabold text-lg">
             Experience
@@ -171,9 +178,9 @@ const ShowOverviewTab = () => {
             {ExperienceList?.map((item, _index) => (
               <li
                 key={item.id}
-                className="w-full flex items-start justify-between"
+                className="w-full flex flex-col sm:flex-row items-start justify-between"
               >
-                <span className="w-fit flex items-center gap-3">
+                <span className="w-full sm:w-fit flex items-center gap-3">
                   <img
                     src="/assets/img/vertex-logo.svg"
                     alt=""
@@ -187,7 +194,7 @@ const ShowOverviewTab = () => {
                     </span>
                   </span>
                 </span>
-                <button className="text-white font-manrope-medium text-xs cursor-pointer">
+                <button className="text-white font-manrope-medium text-xs cursor-pointer mt-2 sm:mt-0">
                   View Profile
                 </button>
               </li>
@@ -204,7 +211,7 @@ function Profile() {
 
   return (
     <div className="w-full h-auto flex flex-col items-start">
-      <div className="w-full h-13 flex items-center justify-between">
+      <div className="w-full h-13 flex items-center justify-between overflow-x-auto">
         <ul className="flex justify-start items-center w-full grow h-full border border-t-0 border-third-gray">
           {AnalyticsTab.map((tab) => (
             <TabList
@@ -215,11 +222,14 @@ function Profile() {
             />
           ))}
         </ul>
-        <button className="text-white font-manrope-semi-bold font-semibold w-31 h-full flex items-center justify-center cursor-pointer border-l border-b border-primary-gray">
+        <button className="whitespace-nowrap text-white font-manrope-semi-bold font-semibold w-31 h-full flex items-center justify-center cursor-pointer border-l border-b border-primary-gray">
           More
         </button>
       </div>
       {activeTab == "Overview" && <ShowOverviewTab />}
+
+      {/* Footer Component */}
+      <Footer />
     </div>
   );
 }
